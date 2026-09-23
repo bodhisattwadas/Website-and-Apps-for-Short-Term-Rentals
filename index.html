@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StayOps | Short-Term Rental Operating System & Mobile App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP GLOBAL NAVIGATION & CONTROL BAR
+       ======================================================================== -->
+  <header class="app-header">
+    <div class="brand-section">
+      <div class="logo-badge">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-title">Stay<span>Ops</span> <span class="brand-tag">STR OS</span></div>
+      </div>
+    </div>
+
+    <!-- Screen Navigation Switcher -->
+    <nav class="screen-tabs" aria-label="Main Navigation">
+      <button class="tab-btn active" data-screen="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Operations Hub</span>
+      </button>
+
+      <button class="tab-btn" data-screen="calendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <span>Multi-Calendar</span>
+      </button>
+
+      <button class="tab-btn" data-screen="properties">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+        <span>Properties</span>
+      </button>
+
+      <button class="tab-btn" data-screen="inbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <span>Unified Inbox</span>
+        <span class="badge-count">1</span>
+      </button>
+
+      <button class="tab-btn" data-screen="housekeeping">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+        <span>Housekeeping</span>
+      </button>
+
+      <button class="tab-btn" data-screen="iot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <span>Smart IoT</span>
+      </button>
+
+      <button class="tab-btn" data-screen="financials">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        <span>Financials</span>
+      </button>
+    </nav>
+
+    <!-- Header Right Controls -->
+    <div class="header-actions">
+      <!-- Device Simulator Switcher -->
+      <div class="view-mode-pill">
+        <button id="viewDesktopBtn" class="view-toggle-btn active" title="Switch to Desktop PMS Workspace">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          Desktop
+        </button>
+        <button id="viewMobileBtn" class="view-toggle-btn" title="Switch to Mobile App Simulator">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          Mobile App
+        </button>
+      </div>
+
+      <!-- Theme Switcher Button -->
+      <button id="themeToggleBtn" class="btn-secondary" style="padding: 7px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" title="Toggle Light / Dark Mode">
+        <span id="themeIcon">🌙</span>
+        <span id="themeLabel">Dark</span>
+      </button>
+
+      <a href="landing.html" class="btn-secondary" style="padding: 7px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" title="View Public Landing Page">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        Landing Page
+      </a>
+
+      <button id="globalNewBookingBtn" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        <span>New Booking</span>
+      </button>
+
+      <div class="host-avatar" title="Property Manager (Auto-pilot On)">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Host Avatar">
+        <span class="online-dot"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       DESKTOP WORKSPACE SCREENS CONTAINER
+       ======================================================================== -->
+  <div id="desktopWorkspaceContainer" class="workspace-wrapper">
+
+    <!-- ======================================================================
+         SCREEN 1: OPERATIONS DASHBOARD
+         ====================================================================== -->
+    <section id="screen-dashboard" class="screen-container active">
+      <div class="screen-header">
+        <div class="screen-title-area">
+          <h1>Operations Hub <span style="font-size: 13px; font-weight: normal; color: var(--primary); background: rgba(16,185,129,0.1); padding: 4px 10px; border-radius: 999px;">● 6 Units Active</span></h1>
+          <p>Real-time short-term rental arrivals, departures, smart access & cleanings</p>
+        </div>
+        <div class="screen-toolbar">
+          <div class="search-box">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" placeholder="Search guests, door codes, units...">
+          </div>
+          <button class="btn-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            Sync Channels
+          </button>
+        </div>
+      </div>
+
+      <!-- Live KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card" style="--accent-color: var(--primary);">
+          <div class="kpi-header">
+            <span class="kpi-label">Portfolio Occupancy</span>
+            <div class="kpi-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+            </div>
+          </div>
+          <div class="kpi-value">88.4%</div>
+          <div class="kpi-footer">
+            <span class="trend-up">↑ +4.2%</span>
+            <span class="trend-neutral">vs last week (5/6 occupied)</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--accent-cyan);">
+          <div class="kpi-header">
+            <span class="kpi-label">Today's Revenue</span>
+            <div class="kpi-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+          </div>
+          <div class="kpi-value">$12,450</div>
+          <div class="kpi-footer">
+            <span class="trend-up">↑ +18.5%</span>
+            <span class="trend-neutral">3 new instant bookings</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--accent-amber);">
+          <div class="kpi-header">
+            <span class="kpi-label">Turnover Cleanings</span>
+            <div class="kpi-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+          </div>
+          <div class="kpi-value">4 Due</div>
+          <div class="kpi-footer">
+            <span class="trend-neutral">2 in progress, 1 ready, 1 pending</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--accent-rose);">
+          <div class="kpi-header">
+            <span class="kpi-label">Guest Inquiries</span>
+            <div class="kpi-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+          </div>
+          <div class="kpi-value">3 Open</div>
+          <div class="kpi-footer">
+            <span class="trend-up" style="color: var(--accent-rose);">1 urgent VIP message</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Urgent Action Strip -->
+      <div class="alert-strip">
+        <div class="alert-strip-left">
+          <span class="alert-badge">Operational Alert</span>
+          <span style="font-size: 13px; font-weight: 500;">
+            <strong>Azure Oceanfront Penthouse:</strong> Smart Lock battery at 14% & guest arriving at 3:00 PM. Housekeeper Maria has been notified to replace 4x AA batteries.
+          </span>
+        </div>
+        <button class="btn-secondary" onclick="switchScreen('iot')" style="padding: 6px 12px; font-size: 12px;">
+          View Smart Lock
+        </button>
+      </div>
+
+      <!-- Operations Dashboard Grid -->
+      <div class="dashboard-grid">
+        <!-- Left: Real-time Operations Timeline -->
+        <div class="panel-card">
+          <div class="panel-title-row">
+            <h3 class="panel-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 10"></polyline></svg>
+              Today's Arrival & Turnover Flow
+            </h3>
+            <span style="font-size: 12px; color: var(--text-muted);">Real-time IoT & Housekeeping Sync</span>
+          </div>
+
+          <div class="timeline-list">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+              <div class="guest-info-block">
+                <img class="guest-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus Vance">
+                <div class="guest-meta">
+                  <h4>Marcus Vance <span class="channel-pill channel-vrbo">VRBO</span></h4>
+                  <p>Azure Oceanfront Penthouse • Check-in 3:00 PM (4 nights)</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="status-badge badge-progress">Cleaning 65%</span>
+                <span style="font-size: 12px; font-family: monospace; background: rgba(255,255,255,0.05); padding: 4px 8px; border-radius: 6px;">PIN #3104</span>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+              <div class="guest-info-block">
+                <img class="guest-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Sophie Laurent">
+                <div class="guest-meta">
+                  <h4>Sophie Laurent <span class="channel-pill channel-airbnb">AIRBNB VIP</span></h4>
+                  <p>Emerald Bay Waterfront Villa • In-House (Late checkout requested)</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="status-badge badge-ready">Active Stay</span>
+                <button class="btn-secondary" onclick="switchScreen('inbox')" style="padding: 4px 10px; font-size: 11px;">Reply to Chat</button>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+              <div class="guest-info-block">
+                <img class="guest-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Amara Chen">
+                <div class="guest-meta">
+                  <h4>Amara Chen <span class="channel-pill channel-direct">DIRECT</span></h4>
+                  <p>Nordic Timber Forest Loft • Tomorrow 4:00 PM (3 nights)</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="status-badge badge-ready">Unit Ready</span>
+                <span style="font-size: 12px; font-family: monospace; background: rgba(255,255,255,0.05); padding: 4px 8px; border-radius: 6px;">PIN #9914</span>
+              </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item">
+              <div class="guest-info-block">
+                <img class="guest-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Jonathan Ross">
+                <div class="guest-meta">
+                  <h4>Dr. Jonathan Ross <span class="channel-pill channel-airbnb">AIRBNB</span></h4>
+                  <p>SoHo Industrial Designer Loft • In-House (Decibel Alert 68 dB)</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="status-badge badge-urgent">Noise Warning</span>
+                <button class="btn-secondary" onclick="switchScreen('iot')" style="padding: 4px 10px; font-size: 11px;">Inspect Decibels</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Channel Breakdown & Fast Controls -->
+        <div>
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3 class="panel-title">Channel Distribution</h3>
+              <span style="font-size: 12px; color: var(--text-muted);">September 2026</span>
+            </div>
+
+            <!-- Segment Bar -->
+            <div class="channel-bar">
+              <div class="channel-bar-seg" style="width: 48%; background: var(--accent-airbnb);" title="Airbnb (48%)"></div>
+              <div class="channel-bar-seg" style="width: 26%; background: var(--accent-vrbo);" title="VRBO (26%)"></div>
+              <div class="channel-bar-seg" style="width: 18%; background: var(--accent-direct);" title="Direct Bookings (18%)"></div>
+              <div class="channel-bar-seg" style="width: 8%; background: var(--accent-booking);" title="Booking.com (8%)"></div>
+            </div>
+
+            <div class="channel-legend">
+              <div class="legend-item">
+                <div class="legend-item-left">
+                  <span class="legend-dot" style="background: var(--accent-airbnb);"></span>
+                  <span>Airbnb</span>
+                </div>
+                <strong>48% ($20.6k)</strong>
+              </div>
+              <div class="legend-item">
+                <div class="legend-item-left">
+                  <span class="legend-dot" style="background: var(--accent-vrbo);"></span>
+                  <span>VRBO</span>
+                </div>
+                <strong>26% ($11.1k)</strong>
+              </div>
+              <div class="legend-item">
+                <div class="legend-item-left">
+                  <span class="legend-dot" style="background: var(--accent-direct);"></span>
+                  <span>Direct Site</span>
+                </div>
+                <strong>18% ($7.7k)</strong>
+              </div>
+              <div class="legend-item">
+                <div class="legend-item-left">
+                  <span class="legend-dot" style="background: var(--accent-booking);"></span>
+                  <span>Booking.com</span>
+                </div>
+                <strong>8% ($3.4k)</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Fleet IoT Summary -->
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3 class="panel-title">Fleet Telemetry Status</h3>
+              <span class="status-badge badge-ready">All Online</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px; font-size: 13px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: var(--text-muted);">Smart Locks Connected</span>
+                <strong>6 of 6 Active</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: var(--text-muted);">Avg Climate Temp</span>
+                <strong>71.2°F (Eco Mode)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: var(--text-muted);">Noise Monitors (Minut)</span>
+                <span style="color: var(--accent-amber); font-weight: 600;">1 Threshold Alert</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SCREEN 2: MULTI-CALENDAR & PMS ENGINE
+         ====================================================================== -->
+    <section id="screen-calendar" class="screen-container">
+      <div class="screen-header">
+        <div class="screen-title-area">
+          <h1>Multi-Calendar & PMS Engine</h1>
+          <p>Consolidated 14-day reservation matrix across Airbnb, VRBO, Booking.com & Direct</p>
+        </div>
+        <div class="screen-toolbar">
+          <div class="month-stepper">
+            <button class="icon-btn" title="Previous Week">‹</button>
+            <h2>September 2026</h2>
+            <button class="icon-btn" title="Next Week">›</button>
+          </div>
+          <button class="btn-secondary" onclick="showToast('Date range synchronized across all channels')">Today</button>
+          <button class="btn-primary" onclick="document.getElementById('newBookingModal').classList.add('active')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Add Reservation
+          </button>
+        </div>
+      </div>
+
+      <div class="calendar-wrapper">
+        <div class="calendar-header-bar">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="legend-dot" style="background: var(--accent-airbnb);"></span>
+              <span style="font-size: 12px; color: var(--text-muted);">Airbnb</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="legend-dot" style="background: var(--accent-vrbo);"></span>
+              <span style="font-size: 12px; color: var(--text-muted);">VRBO</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="legend-dot" style="background: var(--accent-direct);"></span>
+              <span style="font-size: 12px; color: var(--text-muted);">Direct</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="legend-dot" style="background: #4B5563;"></span>
+              <span style="font-size: 12px; color: var(--text-muted);">Maintenance Block</span>
+            </div>
+          </div>
+          <span style="font-size: 12px; color: var(--text-dim);">Click any reservation block to inspect guest billing & door PIN</span>
+        </div>
+
+        <!-- Gantt Matrix -->
+        <div class="gantt-container">
+          <div class="gantt-grid">
+            <!-- Header Row -->
+            <div class="gantt-header-cell property-col">Property Unit</div>
+            <div class="gantt-header-cell">Wed 23</div>
+            <div class="gantt-header-cell is-today">Thu 24 (Today)</div>
+            <div class="gantt-header-cell">Fri 25</div>
+            <div class="gantt-header-cell">Sat 26</div>
+            <div class="gantt-header-cell">Sun 27</div>
+            <div class="gantt-header-cell">Mon 28</div>
+            <div class="gantt-header-cell">Tue 29</div>
+            <div class="gantt-header-cell">Wed 30</div>
+            <div class="gantt-header-cell">Thu 1</div>
+            <div class="gantt-header-cell">Fri 2</div>
+            <div class="gantt-header-cell">Sat 3</div>
+            <div class="gantt-header-cell">Sun 4</div>
+            <div class="gantt-header-cell">Mon 5</div>
+            <div class="gantt-header-cell">Tue 6</div>
+
+            <!-- Row 1: The Glasshouse Villa -->
+            <div class="gantt-row">
+              <div class="property-cell">
+                <img class="prop-thumb" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=120&q=80" alt="Villa">
+                <div class="prop-name-box">
+                  <h5>The Glasshouse Villa</h5>
+                  <span>Aspen • $940/nt</span>
+                </div>
+              </div>
+              <div class="timeline-track-cell" style="grid-column: 2 / span 14;">
+                <div class="res-bar res-bar-airbnb" style="left: 0%; width: 28%;" data-guest="Elena Rostova" data-prop="The Glasshouse Villa" data-dates="Sep 22 - Sep 26" data-price="$3,760" data-channel="airbnb">
+                  <span>Elena Rostova (4 nts)</span>
+                  <span>$3,760</span>
+                </div>
+                <div class="res-bar res-bar-direct" style="left: 32%; width: 42%;" data-guest="David K. Miller" data-prop="The Glasshouse Villa" data-dates="Sep 27 - Oct 3" data-price="$5,640" data-channel="direct">
+                  <span>David Miller (6 nts Direct)</span>
+                  <span>$5,640</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2: Azure Oceanfront Penthouse -->
+            <div class="gantt-row">
+              <div class="property-cell">
+                <img class="prop-thumb" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=120&q=80" alt="Penthouse">
+                <div class="prop-name-box">
+                  <h5>Azure Oceanfront Penthouse</h5>
+                  <span>Miami Beach • $780/nt</span>
+                </div>
+              </div>
+              <div class="timeline-track-cell" style="grid-column: 2 / span 14;">
+                <div class="res-bar res-bar-vrbo" style="left: 7.14%; width: 28%;" data-guest="Marcus Vance" data-prop="Azure Oceanfront Penthouse" data-dates="Sep 24 - Sep 28" data-price="$3,120" data-channel="vrbo">
+                  <span>Marcus Vance (4 nts)</span>
+                  <span>$3,120</span>
+                </div>
+                <div class="res-bar res-bar-airbnb" style="left: 38%; width: 35%;" data-guest="Lucas Romero" data-prop="Azure Oceanfront Penthouse" data-dates="Sep 29 - Oct 4" data-price="$3,900" data-channel="airbnb">
+                  <span>Lucas Romero (5 nts)</span>
+                  <span>$3,900</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3: Nordic Timber Loft -->
+            <div class="gantt-row">
+              <div class="property-cell">
+                <img class="prop-thumb" src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=120&q=80" alt="Nordic Loft">
+                <div class="prop-name-box">
+                  <h5>Nordic Timber Forest Loft</h5>
+                  <span>Lake Tahoe • $490/nt</span>
+                </div>
+              </div>
+              <div class="timeline-track-cell" style="grid-column: 2 / span 14;">
+                <div class="res-bar res-bar-direct" style="left: 14.28%; width: 21%;" data-guest="Amara Chen" data-prop="Nordic Timber Forest Loft" data-dates="Sep 25 - Sep 28" data-price="$1,470" data-channel="direct">
+                  <span>Amara Chen (3 nts)</span>
+                  <span>$1,470</span>
+                </div>
+                <div class="res-bar res-bar-vrbo" style="left: 38%; width: 28%;" data-guest="Nathan Drake" data-prop="Nordic Timber Forest Loft" data-dates="Sep 29 - Oct 3" data-price="$1,960" data-channel="vrbo">
+                  <span>Nathan Drake (4 nts)</span>
+                  <span>$1,960</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 4: Emerald Bay Villa -->
+            <div class="gantt-row">
+              <div class="property-cell">
+                <img class="prop-thumb" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=120&q=80" alt="Como Villa">
+                <div class="prop-name-box">
+                  <h5>Emerald Bay Waterfront Villa</h5>
+                  <span>Lake Como • $1,850/nt</span>
+                </div>
+              </div>
+              <div class="timeline-track-cell" style="grid-column: 2 / span 14;">
+                <div class="res-bar res-bar-airbnb" style="left: 0%; width: 50%;" data-guest="Sophie Laurent" data-prop="Emerald Bay Waterfront Villa" data-dates="Sep 23 - Sep 30" data-price="$12,950" data-channel="airbnb">
+                  <span>Sophie Laurent (VIP 7 nts)</span>
+                  <span>$12,950</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 5: Highland Peak Ski Chalet (Maintenance block) -->
+            <div class="gantt-row">
+              <div class="property-cell">
+                <img class="prop-thumb" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=120&q=80" alt="Ski Chalet">
+                <div class="prop-name-box">
+                  <h5>Highland Peak Ski Chalet</h5>
+                  <span>Whistler • $890/nt</span>
+                </div>
+              </div>
+              <div class="timeline-track-cell" style="grid-column: 2 / span 14;">
+                <div class="res-bar res-bar-maintenance" style="left: 0%; width: 28%;" data-guest="Alpine HVAC Maintenance" data-prop="Highland Peak Ski Chalet" data-dates="Sep 23 - Sep 26" data-price="System Blocked" data-channel="direct">
+                  <span>HVAC Heating Duct Service</span>
+                  <span>Blocked</span>
+                </div>
+                <div class="res-bar res-bar-vrbo" style="left: 35%; width: 42%;" data-guest="Eric Hansen" data-prop="Highland Peak Ski Chalet" data-dates="Sep 28 - Oct 4" data-price="$5,340" data-channel="vrbo">
+                  <span>Eric Hansen (6 nts)</span>
+                  <span>$5,340</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SCREEN 3: PROPERTY LISTINGS & INVENTORY
+         ====================================================================== -->
+    <section id="screen-properties" class="screen-container">
+      <div class="screen-header">
+        <div class="screen-title-area">
+          <h1>Property Inventory & Listings</h1>
+          <p>Manage multi-unit portfolios, dynamic pricing, sync links, and door access credentials</p>
+        </div>
+        <div class="screen-toolbar">
+          <button id="addPropertyBtn" class="btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Add New Property
+          </button>
+        </div>
+      </div>
+
+      <!-- Properties Grid -->
+      <div class="property-grid">
+        <!-- Prop Card 1 -->
+        <div class="property-card">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Glasshouse Villa">
+            <span class="media-tag-left status-badge badge-ready">Occupied (Elena)</span>
+            <span class="media-tag-right">★ 4.98 (114)</span>
+          </div>
+          <div class="card-body">
+            <div class="prop-title-row">
+              <h3>The Glasshouse Villa</h3>
+              <div class="price-night">$940 <span>/night</span></div>
+            </div>
+            <div class="prop-address">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Aspen, Colorado • 4 Beds • 4.5 Baths
+            </div>
+            <div class="prop-iot-status">
+              <span>Smart Lock: <strong>PIN #8492</strong></span>
+              <span style="color: var(--primary);">Battery 92%</span>
+            </div>
+            <div class="card-footer-actions">
+              <button class="btn-secondary" style="flex: 1;" onclick="openCleaningModal('tk-102')">Turnover Tasks</button>
+              <button class="btn-secondary" style="flex: 1;" onclick="switchScreen('calendar')">Calendar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prop Card 2 -->
+        <div class="property-card">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Azure Penthouse">
+            <span class="media-tag-left status-badge badge-progress">Turnover (Maria)</span>
+            <span class="media-tag-right">★ 4.95 (89)</span>
+          </div>
+          <div class="card-body">
+            <div class="prop-title-row">
+              <h3>Azure Oceanfront Penthouse</h3>
+              <div class="price-night">$780 <span>/night</span></div>
+            </div>
+            <div class="prop-address">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Miami Beach, Florida • 3 Beds • 3 Baths
+            </div>
+            <div class="prop-iot-status">
+              <span>Smart Lock: <strong>PIN #3104</strong></span>
+              <span style="color: var(--accent-rose); font-weight: 700;">Battery 14% (Low)</span>
+            </div>
+            <div class="card-footer-actions">
+              <button class="btn-secondary" style="flex: 1;" onclick="openCleaningModal('tk-101')">View Checklist</button>
+              <button class="btn-secondary" style="flex: 1;" onclick="switchScreen('iot')">IoT Diagnostics</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prop Card 3 -->
+        <div class="property-card">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80" alt="Nordic Loft">
+            <span class="media-tag-left status-badge badge-ready">Ready for Check-in</span>
+            <span class="media-tag-right">★ 5.00 (67)</span>
+          </div>
+          <div class="card-body">
+            <div class="prop-title-row">
+              <h3>Nordic Timber Forest Loft</h3>
+              <div class="price-night">$490 <span>/night</span></div>
+            </div>
+            <div class="prop-address">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Lake Tahoe, California • 2 Beds • 2 Baths
+            </div>
+            <div class="prop-iot-status">
+              <span>Smart Lock: <strong>PIN #9914</strong></span>
+              <span style="color: var(--primary);">Battery 88%</span>
+            </div>
+            <div class="card-footer-actions">
+              <button class="btn-secondary" style="flex: 1;" onclick="openCleaningModal('tk-103')">Inspection</button>
+              <button class="btn-secondary" style="flex: 1;" onclick="switchScreen('calendar')">Calendar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prop Card 4 -->
+        <div class="property-card">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" alt="Lake Como Villa">
+            <span class="media-tag-left status-badge badge-ready">Occupied (VIP)</span>
+            <span class="media-tag-right">★ 4.99 (52)</span>
+          </div>
+          <div class="card-body">
+            <div class="prop-title-row">
+              <h3>Emerald Bay Waterfront Villa</h3>
+              <div class="price-night">$1,850 <span>/night</span></div>
+            </div>
+            <div class="prop-address">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Lake Como, Italy • 5 Beds • 5 Baths
+            </div>
+            <div class="prop-iot-status">
+              <span>Smart Lock: <strong>PIN #2087</strong></span>
+              <span style="color: var(--primary);">Battery 95%</span>
+            </div>
+            <div class="card-footer-actions">
+              <button class="btn-secondary" style="flex: 1;" onclick="switchScreen('inbox')">Message Guest</button>
+              <button class="btn-secondary" style="flex: 1;" onclick="switchScreen('calendar')">Calendar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SCREEN 4: UNIFIED GUEST INBOX & OMNICHANNEL CHAT
+         ====================================================================== -->
+    <section id="screen-inbox" class="screen-container">
+      <div class="screen-header">
+        <div class="screen-title-area">
+          <h1>Unified Guest Inbox</h1>
+          <p>Consolidated messaging across Airbnb, VRBO, WhatsApp, SMS & Email with AI response assistant</p>
+        </div>
+      </div>
+
+      <div class="inbox-layout">
+        <!-- Col 1: Thread List -->
+        <div class="inbox-threads-col">
+          <div class="threads-search-bar">
+            <div class="search-box" style="width: 100%;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" placeholder="Search conversations...">
+            </div>
+          </div>
+
+          <div class="channel-filter-chips">
+            <button class="filter-chip active" data-channel="all">All (4)</button>
+            <button class="filter-chip" data-channel="airbnb">Airbnb</button>
+            <button class="filter-chip" data-channel="vrbo">VRBO</button>
+            <button class="filter-chip" data-channel="whatsapp">WhatsApp</button>
+            <button class="filter-chip" data-channel="direct">Direct</button>
+          </div>
+
+          <div class="threads-list">
+            <!-- Thread 1 -->
+            <div class="thread-item active unread" data-thread-id="1" data-channel="airbnb">
+              <img class="guest-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Sophie Laurent">
+              <div class="thread-details">
+                <div class="thread-top">
+                  <span class="thread-name">Sophie Laurent</span>
+                  <span class="thread-time">12m ago</span>
+                </div>
+                <div class="thread-prop">Emerald Bay Villa • <span class="channel-pill channel-airbnb">Airbnb</span></div>
+                <div class="thread-snippet">Hi! Can we request a late checkout on the 30th around 1:00 PM?</div>
+              </div>
+            </div>
+
+            <!-- Thread 2 -->
+            <div class="thread-item" data-thread-id="2" data-channel="vrbo">
+              <img class="guest-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus Vance">
+              <div class="thread-details">
+                <div class="thread-top">
+                  <span class="thread-name">Marcus Vance</span>
+                  <span class="thread-time">45m ago</span>
+                </div>
+                <div class="thread-prop">Azure Penthouse • <span class="channel-pill channel-vrbo">VRBO</span></div>
+                <div class="thread-snippet">Landing at Miami International now. Is early baggage drop available?</div>
+              </div>
+            </div>
+
+            <!-- Thread 3 -->
+            <div class="thread-item" data-thread-id="3" data-channel="direct">
+              <img class="guest-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Dr. Jonathan Ross">
+              <div class="thread-details">
+                <div class="thread-top">
+                  <span class="thread-name">Dr. Jonathan Ross</span>
+                  <span class="thread-time">2h ago</span>
+                </div>
+                <div class="thread-prop">SoHo Loft • <span class="channel-pill channel-direct">Direct SMS</span></div>
+                <div class="thread-snippet">Sound system works great, thanks for the quick response on Wi-Fi.</div>
+              </div>
+            </div>
+
+            <!-- Thread 4 -->
+            <div class="thread-item" data-thread-id="4" data-channel="whatsapp">
+              <img class="guest-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Amara Chen">
+              <div class="thread-details">
+                <div class="thread-top">
+                  <span class="thread-name">Amara Chen</span>
+                  <span class="thread-time">Yesterday</span>
+                </div>
+                <div class="thread-prop">Nordic Loft • <span class="channel-pill channel-whatsapp" style="background: rgba(37,211,102,0.15); color: #25D366;">WhatsApp</span></div>
+                <div class="thread-snippet">Are snow chains required on the driveway this week?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Chat Stream -->
+        <div class="inbox-chat-col">
+          <div class="chat-header">
+            <div class="chat-guest-preview">
+              <img id="chatGuestAvatar" class="guest-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Guest">
+              <div>
+                <h3 id="chatGuestName" style="font-size: 15px; font-weight: 600;">Sophie Laurent</h3>
+                <p id="chatGuestProperty" style="font-size: 12px; color: var(--text-muted);">Emerald Bay Waterfront Villa</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span id="chatChannelBadge" class="channel-pill channel-airbnb">AIRBNB</span>
+              <button class="btn-secondary" style="padding: 6px 12px;" onclick="showToast('Door PIN re-sent via SMS')">Send Door PIN</button>
+            </div>
+          </div>
+
+          <div id="chatMessagesScroll" class="chat-messages-scroll">
+            <div class="message-bubble msg-outgoing">
+              <div class="msg-content">Welcome to Emerald Bay Villa! Your door code is #2087. Complimentary Chianti wine is in the cooler. Let us know if you need anything!</div>
+              <div class="msg-meta">Yesterday, 3:00 PM • Delivered</div>
+            </div>
+            <div class="message-bubble msg-incoming">
+              <div class="msg-content">Thank you so much! The villa is breathtaking. We love the sunset view.</div>
+              <div class="msg-meta">Yesterday, 4:15 PM • Received</div>
+            </div>
+            <div class="message-bubble msg-incoming">
+              <div class="msg-content">Hi! Can we request a late checkout on the 30th around 1:00 PM? Our flight is in the late afternoon.</div>
+              <div class="msg-meta">12m ago • Received</div>
+            </div>
+          </div>
+
+          <!-- AI Assistant Quick Suggestion Bar -->
+          <div class="chat-ai-bar">
+            <span style="font-size: 11px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 4px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              AI Quick Replies:
+            </span>
+            <button class="ai-chip-prompt" data-template="Hi Sophie! Absolutely, we would love to offer you complimentary late checkout until 1:00 PM on the 30th. Enjoy your final day!">
+              "Approve Late Checkout (1:00 PM)"
+            </button>
+            <button class="ai-chip-prompt" data-template="Hi Sophie, your personal smart lock door code is #2087, active throughout your stay. Safe travels!">
+              "Re-send Door Code PIN"
+            </button>
+            <button class="ai-chip-prompt" data-template="Hi Sophie, here is the high-speed mesh Wi-Fi network: 'ComoVilla_5G', password 'bellagio2026'.">
+              "Send Wi-Fi Guide"
+            </button>
+          </div>
+
+          <!-- Input Composer -->
+          <div class="chat-input-area">
+            <input id="chatInputBox" type="text" placeholder="Type a message or click an AI quick reply...">
+            <button id="sendMessageBtn" class="btn-primary" style="padding: 10px 16px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              Send
+            </button>
+          </div>
+        </div>
+
+        <!-- Col 3: Stay Profile Sidebar -->
+        <div class="inbox-details-col">
+          <div class="stay-hero-card">
+            <img id="sideGuestAvatar" class="guest-big-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=140&q=80" alt="Guest Big">
+            <h3 id="sideGuestName" style="font-size: 16px; font-weight: 700;">Sophie Laurent</h3>
+            <p style="color: var(--primary); font-size: 12px; font-weight: 600; margin-top: 2px;">★ Verified VIP Guest (12 Airbnb Reviews)</p>
+          </div>
+
+          <div class="quick-detail-list">
+            <div class="detail-row">
+              <span class="detail-label">Property</span>
+              <span id="sideStayProperty" class="detail-val">Emerald Bay Villa</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Reservation Dates</span>
+              <span id="sideStayDates" class="detail-val">Sep 23 - Sep 30 (7 nts)</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Guest Count</span>
+              <span class="detail-val">4 Adults, 2 Kids</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Total Booking Value</span>
+              <span class="detail-val" style="color: var(--primary); font-size: 15px;">$12,950.00</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Security Deposit</span>
+              <span class="detail-val" style="color: #34D399;">$1,000 Authorized</span>
+            </div>
+          </div>
+
+          <div class="door-code-box">
+            <span style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Current Smart Lock Pass</span>
+            <div id="doorPinDisplay" class="door-pin-display">#2087</div>
+            <span style="font-size: 11px; color: var(--text-dim);">Auto-expires Sep 30 at 1:00 PM</span>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 8px;">
+            <button id="generatePinBtn" class="btn-secondary" style="width: 100%; justify-content: center;">Generate New PIN Pass</button>
+            <button class="btn-secondary" style="width: 100%; justify-content: center;" onclick="showToast('House guide PDF dispatched to guest phone')">Send House Guide Link</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SCREEN 5: HOUSEKEEPING & WORKFLOWS KANBAN
+         ====================================================================== -->
+    <section id="screen-housekeeping" class="screen-container">
+      <div class="screen-header">
+        <div class="screen-title-area">
+          <h1>Housekeeping & Field Operations</h1>
+          <p>Turnover checklists, cleaner assignments, inspection sign-offs, and maintenance tickets</p>
+        </div>
+        <div class="screen-toolbar">
+          <button class="btn-secondary" onclick="showToast('Automated turnover scheduled for tomorrow')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+            Schedule Cleaning
+          </button>
+        </div>
+      </div>
+
+      <!-- Kanban Columns -->
+      <div class="kanban-board">
+        <!-- Col 1: Pending -->
+        <div class="kanban-col">
+          <div class="kanban-col-header">
+            <div class="kanban-col-title">
+              <span class="legend-dot" style="background: #94A3B8;"></span>
+              Pending Turnovers
+            </div>
+            <span class="kanban-counter">1</span>
+          </div>
+          <div class="task-list">
+            <div class="task-card" data-task-id="tk-102">
+              <span class="task-type-badge task-turnover">Turnover Clean</span>
+              <div class="task-prop-name">The Glasshouse Villa</div>
+              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">4 Beds • Hot tub chemical balance • Firewood restock</p>
+              <div class="task-meta-row">
+                <div class="cleaner-assigned">
+                  <img class="cleaner-avatar" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=60&q=80" alt="Carlos">
+                  <span>Carlos Rivera</span>
+                </div>
+                <span>Due Tomorrow 1 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: In Progress -->
+        <div class="kanban-col">
+          <div class="kanban-col-header">
+            <div class="kanban-col-title">
+              <span class="legend-dot" style="background: var(--accent-amber);"></span>
+              In Progress
+            </div>
+            <span class="kanban-counter">2</span>
+          </div>
+          <div class="task-list">
+            <div class="task-card" data-task-id="tk-101">
+              <span class="task-type-badge task-turnover">Turnover Clean (65%)</span>
+              <div class="task-prop-name">Azure Oceanfront Penthouse</div>
+              <p style="font-size: 12px; color: var(--accent-amber); margin-bottom: 8px;">Guest Marcus Vance arriving at 3:00 PM</p>
+              <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden; margin-bottom: 10px;">
+                <div style="height: 100%; width: 65%; background: var(--accent-amber);"></div>
+              </div>
+              <div class="task-meta-row">
+                <div class="cleaner-assigned">
+                  <img class="cleaner-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=60&q=80" alt="Maria">
+                  <span>Maria Santos</span>
+                </div>
+                <span>Due Today 2:30 PM</span>
+              </div>
+            </div>
+
+            <div class="task-card" data-task-id="tk-105">
+              <span class="task-type-badge task-repair">HVAC Maintenance</span>
+              <div class="task-prop-name">Highland Peak Ski Chalet</div>
+              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Thermostat sensor replacement & duct diagnostics</p>
+              <div class="task-meta-row">
+                <div class="cleaner-assigned">
+                  <img class="cleaner-avatar" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=60&q=80" alt="Alpine">
+                  <span>Alpine HVAC Pros</span>
+                </div>
+                <span>Due Today 5 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 3: Needs Inspection -->
+        <div class="kanban-col">
+          <div class="kanban-col-header">
+            <div class="kanban-col-title">
+              <span class="legend-dot" style="background: var(--accent-cyan);"></span>
+              Needs Inspection
+            </div>
+            <span class="kanban-counter">1</span>
+          </div>
+          <div class="task-list">
+            <div class="task-card" data-task-id="tk-103">
+              <span class="task-type-badge task-turnover">Ready for Review</span>
+              <div class="task-prop-name">Nordic Timber Forest Loft</div>
+              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Linens done • 8 photo checkpoints uploaded</p>
+              <div class="task-meta-row">
+                <div class="cleaner-assigned">
+                  <img class="cleaner-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=60&q=80" alt="Sarah">
+                  <span>Sarah Jenkins</span>
+                </div>
+                <span class="status-badge badge-ready" style="padding: 2px 6px; font-size: 10px;">Sign-off Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Completed -->
+        <div class="kanban-col">
+          <div class="kanban-col-header">
+            <div class="kanban-col-title">
+              <span class="legend-dot" style="background: var(--primary);"></span>
+              Completed & Ready
+            </div>
+            <span class="kanban-counter">1</span>
+          </div>
+          <div class="task-list">
+            <div class="task-card" data-task-id="tk-104">
+              <span class="task-type-badge task-deepclean">Deep Clean Complete</span>
+              <div class="task-prop-name">SoHo Industrial Designer Loft</div>
+              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Steam sanitization and upholstery wash signed off</p>
+              <div class="task-meta-row">
+                <div class="cleaner-assigned">
+                  <img class="cleaner-avatar" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=60&q=80" alt="Elite">
+                  <span>Elite Clean Co.</span>
+                </div>
+                <span style="color: var(--primary); font-weight: 600;">Verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SCREEN 6: SMART LOCK & IOT AUTOMATION
+         ====================================================================== -->
+    <section id="screen-iot" class="screen-container">
+      <div class="screen-header">
+        <div class="screen-title-area">
+          <h1>Smart Locks, IoT & Automation Center</h1>
+          <p>Keyless access control, decibel noise sensors, smart climate management & triggers</p>
+        </div>
+        <div class="screen-toolbar">
+          <button class="btn-secondary" onclick="showToast('Lock health check completed. All 6 doors responding within 180ms.')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            Ping Fleet
+          </button>
+        </div>
+      </div>
+
+      <!-- IoT Devices Grid -->
+      <div class="iot-grid">
+        <!-- Unit 1 -->
+        <div class="iot-device-card">
+          <div class="device-header">
+            <div>
+              <h4 style="font-size: 15px; font-weight: 600;">Azure Oceanfront Penthouse</h4>
+              <span style="font-size: 12px; color: var(--text-muted);">Schlage Encode Plus • Entry Lock</span>
+            </div>
+            <button class="lock-toggle-btn locked">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Locked
+            </button>
+          </div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">Active PIN: <strong style="color: var(--primary); font-family: monospace; font-size: 14px;">#3104</strong> (Valid: 3:00 PM today)</div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 6px;">
+            <span style="color: var(--accent-rose); font-weight: 600;">Battery Low Alert</span>
+            <strong>14%</strong>
+          </div>
+          <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden;">
+            <div style="height: 100%; width: 14%; background: var(--accent-rose);"></div>
+          </div>
+        </div>
+
+        <!-- Unit 2 -->
+        <div class="iot-device-card">
+          <div class="device-header">
+            <div>
+              <h4 style="font-size: 15px; font-weight: 600;">SoHo Industrial Designer Loft</h4>
+              <span style="font-size: 12px; color: var(--text-muted);">Minut Noise & Smoke Sensor</span>
+            </div>
+            <span class="status-badge badge-urgent" style="font-size: 11px;">Quiet Hours Alert</span>
+          </div>
+          <div style="font-size: 12px; color: var(--text-muted);">Current Decibels: <strong style="color: var(--accent-rose); font-size: 15px;">68 dB</strong> (Threshold: 65 dB)</div>
+          <div class="noise-meter-bar">
+            <div class="noise-meter-fill" style="width: 78%; background: var(--accent-rose);"></div>
+          </div>
+          <p style="font-size: 11px; color: var(--text-dim); margin-top: 6px;">Automated friendly SMS warning dispatched to Dr. Jonathan Ross 4m ago.</p>
+        </div>
+
+        <!-- Unit 3 -->
+        <div class="iot-device-card">
+          <div class="device-header">
+            <div>
+              <h4 style="font-size: 15px; font-weight: 600;">The Glasshouse Villa</h4>
+              <span style="font-size: 12px; color: var(--text-muted);">Ecobee Smart Thermostat</span>
+            </div>
+            <span class="status-badge badge-ready">Eco Mode</span>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin: 8px 0;">
+            <span style="font-size: 28px; font-weight: 700; color: var(--primary);">71°F</span>
+            <span style="font-size: 12px; color: var(--text-muted);">Target: 70°F • Humidity 42%</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn-secondary" style="flex: 1; padding: 6px;" onclick="showToast('Thermostat set to 69°F')">-1°F</button>
+            <button class="btn-secondary" style="flex: 1; padding: 6px;" onclick="showToast('Thermostat set to 72°F')">+1°F</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Automation Rules Engine -->
+      <div class="rules-container">
+        <div class="panel-title-row">
+          <h3 class="panel-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg>
+            Automated Operations Rules & Triggers
+          </h3>
+          <span style="font-size: 12px; color: var(--text-muted);">Active in background</span>
+        </div>
+
+        <div class="rule-row">
+          <div class="rule-left">
+            <div class="device-icon-pill">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </div>
+            <div>
+              <h4 style="font-size: 14px; font-weight: 600;">Generate Door PIN on Reservation Confirmation</h4>
+              <p style="font-size: 12px; color: var(--text-muted);">Creates 4-digit code matching last 4 digits of guest phone, valid from check-in time to checkout + 1h.</p>
+            </div>
+          </div>
+          <div class="rule-toggle-switch active" data-rule="Auto PIN Generation">
+            <div class="rule-toggle-knob"></div>
+          </div>
+        </div>
+
+        <div class="rule-row">
+          <div class="rule-left">
+            <div class="device-icon-pill">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div>
+              <h4 style="font-size: 14px; font-weight: 600;">Checkout Trigger -> Revoke PIN & Alert Cleaning Team</h4>
+              <p style="font-size: 12px; color: var(--text-muted);">When guest locks door at checkout, automatically revoke lock access, set AC to Eco mode, and dispatch WhatsApp alert to cleaner.</p>
+            </div>
+          </div>
+          <div class="rule-toggle-switch active" data-rule="Checkout Turnover Automation">
+            <div class="rule-toggle-knob"></div>
+          </div>
+        </div>
+
+        <div class="rule-row">
+          <div class="rule-left">
+            <div class="device-icon-pill">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            </div>
+            <div>
+              <h4 style="font-size: 14px; font-weight: 600;">Minut Quiet Hours Decibel Guard</h4>
+              <p style="font-size: 12px; color: var(--text-muted);">Send polite automated SMS to guest if noise exceeds 70 dB for more than 10 consecutive minutes between 10:00 PM and 8:00 AM.</p>
+            </div>
+          </div>
+          <div class="rule-toggle-switch active" data-rule="Quiet Hours Protection">
+            <div class="rule-toggle-knob"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SCREEN 7: FINANCIALS & ANALYTICS
+         ====================================================================== -->
+    <section id="screen-financials" class="screen-container">
+      <div class="screen-header">
+        <div class="screen-title-area">
+          <h1>Financials & Revenue Analytics</h1>
+          <p>Portfolio RevPAR, ADR, channel commission fee deductions, and owner payout statements</p>
+        </div>
+        <div class="screen-toolbar">
+          <button class="btn-secondary" onclick="showToast('Exporting September Owner Statement CSV...')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Export Payouts
+          </button>
+        </div>
+      </div>
+
+      <!-- Financial Metric Cards -->
+      <div class="financial-metrics-row">
+        <div class="kpi-card" style="--accent-color: var(--primary);">
+          <div class="kpi-header"><span class="kpi-label">Gross Revenue (Sep)</span></div>
+          <div class="kpi-value">$42,950</div>
+          <div class="kpi-footer"><span class="trend-up">↑ +22.4%</span> vs August</div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--accent-cyan);">
+          <div class="kpi-header"><span class="kpi-label">Average Daily Rate (ADR)</span></div>
+          <div class="kpi-value">$582</div>
+          <div class="kpi-footer"><span class="trend-up">↑ +$45</span> dynamic pricing gain</div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--accent-purple);">
+          <div class="kpi-header"><span class="kpi-label">RevPAR</span></div>
+          <div class="kpi-value">$514</div>
+          <div class="kpi-footer"><span class="trend-neutral">88.4% occupancy factor</span></div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--accent-amber);">
+          <div class="kpi-header"><span class="kpi-label">Cleaning Fees Collected</span></div>
+          <div class="kpi-value">$3,840</div>
+          <div class="kpi-footer"><span class="trend-up">Net margin +$1,120</span></div>
+        </div>
+      </div>
+
+      <!-- Visual Earnings Chart Panel -->
+      <div class="fin-chart-panel">
+        <div class="panel-title-row">
+          <h3 class="panel-title">Monthly Payout Trends (Past 6 Months)</h3>
+          <span style="font-size: 12px; color: var(--text-muted);">$ USD Net Payout</span>
+        </div>
+
+        <div class="chart-bars-wrap">
+          <div class="chart-bar-group">
+            <div class="chart-bar-pill" style="height: 55%;" title="April: $24,500"></div>
+            <span class="chart-bar-label">Apr</span>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar-pill" style="height: 65%;" title="May: $28,900"></div>
+            <span class="chart-bar-label">May</span>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar-pill" style="height: 82%;" title="Jun: $36,200"></div>
+            <span class="chart-bar-label">Jun</span>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar-pill" style="height: 95%;" title="Jul: $41,800"></div>
+            <span class="chart-bar-label">Jul</span>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar-pill" style="height: 80%;" title="Aug: $35,100"></div>
+            <span class="chart-bar-label">Aug</span>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar-pill" style="height: 98%; background: linear-gradient(180deg, #10B981, #06B6D4);" title="Sep (Current): $42,950"></div>
+            <span class="chart-bar-label" style="color: var(--primary); font-weight: 700;">Sep (Current)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payouts Table -->
+      <div class="panel-card">
+        <div class="panel-title-row">
+          <h3 class="panel-title">Recent Payout Settlements</h3>
+          <span style="font-size: 12px; color: var(--text-muted);">Direct deposit via Stripe / Bank ACH</span>
+        </div>
+
+        <div class="data-table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Property</th>
+                <th>Guest</th>
+                <th>Channel</th>
+                <th>Gross</th>
+                <th>Channel Fee</th>
+                <th>Net Payout</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>#SO-9821</strong></td>
+                <td>Emerald Bay Waterfront Villa</td>
+                <td>Sophie Laurent</td>
+                <td><span class="channel-pill channel-airbnb">Airbnb</span></td>
+                <td>$12,950.00</td>
+                <td style="color: var(--accent-rose);">-$388.50 (3%)</td>
+                <td style="color: var(--primary); font-weight: 700;">$12,561.50</td>
+                <td><span class="status-badge badge-ready">Processed</span></td>
+              </tr>
+              <tr>
+                <td><strong>#SO-9820</strong></td>
+                <td>Azure Oceanfront Penthouse</td>
+                <td>Marcus Vance</td>
+                <td><span class="channel-pill channel-vrbo">VRBO</span></td>
+                <td>$3,120.00</td>
+                <td style="color: var(--accent-rose);">-$156.00 (5%)</td>
+                <td style="color: var(--primary); font-weight: 700;">$2,964.00</td>
+                <td><span class="status-badge badge-progress">Scheduled Sep 25</span></td>
+              </tr>
+              <tr>
+                <td><strong>#SO-9819</strong></td>
+                <td>Nordic Timber Forest Loft</td>
+                <td>Amara Chen</td>
+                <td><span class="channel-pill channel-direct">Direct Booking</span></td>
+                <td>$1,470.00</td>
+                <td style="color: var(--accent-rose);">-$42.63 (2.9% Stripe)</td>
+                <td style="color: var(--primary); font-weight: 700;">$1,427.37</td>
+                <td><span class="status-badge badge-ready">Processed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /workspace-wrapper -->
+
+
+  <!-- ========================================================================
+       MOBILE APP EMULATOR (iPhone 16 Pro Device Frame)
+       ======================================================================== -->
+  <div id="mobileSimulatorContainer" class="mobile-simulator-wrapper" style="display: none;">
+    <div class="mobile-toolbar-notice">
+      <h3 style="font-size: 16px; font-weight: 600;">StayOps Mobile Companion App</h3>
+      <p style="font-size: 12px; color: var(--text-muted);">Designed for Property Managers, Hosts, and Housekeeping field crews</p>
+    </div>
+
+    <div class="phone-mockup-frame">
+      <div class="phone-screen">
+        <!-- Dynamic Island -->
+        <div class="phone-notch-island">
+          <span>9:41</span>
+          <div style="width: 10px; height: 10px; background: #10B981; border-radius: 50%;"></div>
+        </div>
+
+        <!-- Phone Status Bar -->
+        <div class="phone-status-bar">
+          <span style="font-size: 11px; color: var(--primary); font-weight: 700;">STAYOPS MOBILE</span>
+          <span style="font-size: 11px; opacity: 0.8;">5G • 98%</span>
+        </div>
+
+        <!-- Phone Content Area -->
+        <div class="phone-content">
+
+          <!-- Mobile Tab 1: Today's Run -->
+          <div id="mob-home" class="mobile-tab-view active">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <div>
+                <h2 style="font-size: 18px; font-weight: 700;">Good morning, Host</h2>
+                <p style="font-size: 12px; color: var(--text-muted);">Today's Operational Roster</p>
+              </div>
+              <img class="cleaner-avatar" style="width: 32px; height: 32px;" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Host">
+            </div>
+
+            <!-- Mobile Quick KPIs -->
+            <div class="mob-kpi-row">
+              <div class="mob-kpi-card">
+                <span style="font-size: 11px; color: var(--text-muted);">Check-ins Today</span>
+                <div style="font-size: 20px; font-weight: 700; color: var(--primary);">2 Guests</div>
+              </div>
+              <div class="mob-kpi-card">
+                <span style="font-size: 11px; color: var(--text-muted);">Cleanings Due</span>
+                <div style="font-size: 20px; font-weight: 700; color: var(--accent-amber);">3 Units</div>
+              </div>
+            </div>
+
+            <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 8px;">Upcoming Arrival</h4>
+            <div class="mob-card" style="border-left: 3px solid var(--accent-vrbo);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <strong style="font-size: 13px;">Marcus Vance (VRBO)</strong>
+                <span style="font-size: 11px; color: var(--primary);">3:00 PM</span>
+              </div>
+              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Azure Oceanfront Penthouse</p>
+              <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 6px 10px; border-radius: 6px;">
+                <span style="font-size: 11px;">Door Code: <strong>#3104</strong></span>
+                <span class="status-badge badge-progress" style="font-size: 10px; padding: 2px 6px;">Turnover 65%</span>
+              </div>
+            </div>
+
+            <h4 style="font-size: 13px; font-weight: 600; margin: 14px 0 8px 0;">Urgent Device Alert</h4>
+            <div class="mob-card" style="border: 1px solid rgba(244,63,94,0.3); background: rgba(244,63,94,0.06);">
+              <div style="display: flex; align-items: center; gap: 8px; color: var(--accent-rose); font-weight: 600; font-size: 12px; margin-bottom: 4px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                Smart Lock Battery 14%
+              </div>
+              <p style="font-size: 11px; color: var(--text-muted);">Azure Penthouse - Assigned to Maria to change batteries.</p>
+            </div>
+          </div>
+
+          <!-- Mobile Tab 2: Calendar -->
+          <div id="mob-calendar" class="mobile-tab-view">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Mobile Schedule</h3>
+            <div class="mob-card">
+              <span style="font-size: 11px; color: var(--primary); font-weight: 600;">TODAY • SEP 24</span>
+              <div style="margin-top: 6px; font-size: 13px; font-weight: 600;">Marcus Vance Check-in (3:00 PM)</div>
+              <p style="font-size: 12px; color: var(--text-muted);">Azure Oceanfront Penthouse • $3,120</p>
+            </div>
+            <div class="mob-card">
+              <span style="font-size: 11px; color: var(--accent-cyan); font-weight: 600;">TOMORROW • SEP 25</span>
+              <div style="margin-top: 6px; font-size: 13px; font-weight: 600;">Amara Chen Check-in (4:00 PM)</div>
+              <p style="font-size: 12px; color: var(--text-muted);">Nordic Timber Forest Loft • $1,470</p>
+            </div>
+            <div class="mob-card">
+              <span style="font-size: 11px; color: var(--accent-amber); font-weight: 600;">SEP 28</span>
+              <div style="margin-top: 6px; font-size: 13px; font-weight: 600;">Dr. Jonathan Ross Checkout (11:00 AM)</div>
+              <p style="font-size: 12px; color: var(--text-muted);">SoHo Industrial Designer Loft</p>
+            </div>
+          </div>
+
+          <!-- Mobile Tab 3: Inbox -->
+          <div id="mob-inbox" class="mobile-tab-view">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Guest Messages</h3>
+            <div class="mob-card" onclick="showToast('Opened thread with Sophie Laurent')">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <strong style="font-size: 13px;">Sophie Laurent</strong>
+                <span style="font-size: 10px; color: var(--primary);">12m ago</span>
+              </div>
+              <p style="font-size: 11px; color: var(--text-muted);">Can we request a late checkout on the 30th around 1:00 PM?</p>
+            </div>
+            <div class="mob-card" onclick="showToast('Opened thread with Marcus Vance')">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <strong style="font-size: 13px;">Marcus Vance</strong>
+                <span style="font-size: 10px; color: var(--text-dim);">45m ago</span>
+              </div>
+              <p style="font-size: 11px; color: var(--text-muted);">Landing at Miami now. Early baggage drop available?</p>
+            </div>
+          </div>
+
+          <!-- Mobile Tab 4: Housekeeping Checklist Runner -->
+          <div id="mob-tasks" class="mobile-tab-view">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px;">Housekeeper Checklist</h3>
+            <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 14px;">Unit: Azure Oceanfront Penthouse</p>
+
+            <div class="mob-card mob-checklist-item">
+              <label style="display: flex; align-items: center; gap: 10px; font-size: 12px;">
+                <input type="checkbox" checked style="accent-color: var(--primary);">
+                <span>Strip bed linens & replace with fresh 600TC sheets</span>
+              </label>
+            </div>
+            <div class="mob-card mob-checklist-item">
+              <label style="display: flex; align-items: center; gap: 10px; font-size: 12px;">
+                <input type="checkbox" checked style="accent-color: var(--primary);">
+                <span>Sanitize master & guest bathrooms</span>
+              </label>
+            </div>
+            <div class="mob-card mob-checklist-item">
+              <label style="display: flex; align-items: center; gap: 10px; font-size: 12px;">
+                <input type="checkbox" style="accent-color: var(--primary);">
+                <span>Restock Nespresso pods & welcome snack tray</span>
+              </label>
+            </div>
+            <div class="mob-card mob-checklist-item">
+              <label style="display: flex; align-items: center; gap: 10px; font-size: 12px;">
+                <input type="checkbox" style="accent-color: var(--primary);">
+                <span>Replace 4x AA batteries in front door smart lock</span>
+              </label>
+            </div>
+
+            <button class="btn-secondary" style="width: 100%; justify-content: center; margin-top: 10px;" onclick="showToast('Camera opened: Inspection photo attached!')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              Upload Inspection Photos
+            </button>
+            <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 8px;" onclick="showToast('Unit marked 100% Ready for Guest Arrival!')">
+              Mark Turnover Complete
+            </button>
+          </div>
+
+        </div><!-- /phone-content -->
+
+        <!-- Mobile Bottom Tab Bar -->
+        <div class="mobile-bottom-nav">
+          <button class="mob-nav-btn active" data-mob-tab="mob-home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+            <span>Today</span>
+          </button>
+          <button class="mob-nav-btn" data-mob-tab="mob-calendar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line></svg>
+            <span>Calendar</span>
+          </button>
+          <button class="mob-nav-btn" data-mob-tab="mob-inbox">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Inbox</span>
+          </button>
+          <button class="mob-nav-btn" data-mob-tab="mob-tasks">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            <span>Cleaners</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div><!-- /mobile-simulator-wrapper -->
+
+
+  <!-- ========================================================================
+       SLIDE-OUT RESERVATION DETAILS DRAWER
+       ======================================================================== -->
+  <div id="bookingDrawer" class="drawer-overlay">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div>
+          <span id="drawerChannelTag" class="channel-pill channel-airbnb">AIRBNB</span>
+          <h2 id="drawerGuestName" style="font-size: 18px; font-weight: 700; margin-top: 4px;">Sophie Laurent</h2>
+        </div>
+        <button id="closeDrawerBtn" class="icon-btn">✕</button>
+      </div>
+      <div class="drawer-content">
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
+          <h4 id="drawerProperty" style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Emerald Bay Waterfront Villa</h4>
+          <p id="drawerDates" style="font-size: 13px; color: var(--text-muted);">Sep 23 - Sep 30 (7 nights)</p>
+        </div>
+
+        <h4 style="font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px;">Financial Breakdown</h4>
+        <div class="quick-detail-list" style="margin-bottom: 24px;">
+          <div class="detail-row">
+            <span class="detail-label">Nightly Rate</span>
+            <span class="detail-val">$1,850.00 × 7 nights</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Cleaning Fee</span>
+            <span class="detail-val">$450.00</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Local Tourism Taxes (12%)</span>
+            <span class="detail-val">$1,554.00</span>
+          </div>
+          <div class="detail-row" style="border-top: 1px solid var(--border-subtle); padding-top: 10px;">
+            <span class="detail-label" style="font-weight: 700; color: var(--text-main);">Net Payout Received</span>
+            <span id="drawerTotalPayout" class="detail-val" style="color: var(--primary); font-size: 18px; font-weight: 700;">$12,950.00</span>
+          </div>
+        </div>
+
+        <h4 style="font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px;">Keyless Access & Smart Lock</h4>
+        <div class="door-code-box" style="margin-bottom: 20px;">
+          <span style="font-size: 11px; color: var(--text-muted);">Guest Keypad Passcode</span>
+          <div class="door-pin-display">#2087</div>
+          <span style="font-size: 11px; color: var(--text-muted);">Auto-programmed on Front Door Lock</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <button class="btn-primary" style="justify-content: center;" onclick="switchScreen('inbox'); document.getElementById('bookingDrawer').classList.remove('active');">
+            Open Chat with Guest
+          </button>
+          <button class="btn-secondary" style="justify-content: center;" onclick="showToast('Door PIN re-sent via SMS & WhatsApp')">
+            Re-send Check-in Instructions
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       MODAL: HOUSEKEEPING TURNOVER INSPECTION CHECKLIST
+       ======================================================================== -->
+  <div id="cleaningModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <h3 id="cleaningModalPropTitle" style="font-size: 17px; font-weight: 700;">Housekeeping Inspection</h3>
+          <p id="cleaningModalCleaner" style="font-size: 12px; color: var(--text-muted);">Maria Santos (Due Today 2:30 PM)</p>
+        </div>
+        <button class="close-modal-btn icon-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 12px; color: var(--text-muted);">Checklist Progress</span>
+          <span id="cleaningProgressLabel" style="font-size: 12px; font-weight: 600; color: var(--primary);">65% Complete</span>
+        </div>
+        <div style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 999px; overflow: hidden; margin-bottom: 20px;">
+          <div id="cleaningProgressBar" style="height: 100%; width: 65%; background: var(--primary); transition: width 0.3s ease;"></div>
+        </div>
+
+        <h4 style="font-size: 13px; font-weight: 600; margin-bottom: 10px;">Turnover Tasks:</h4>
+        <div id="cleaningChecklistItems" style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 20px;">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px dashed var(--border-subtle); border-radius: var(--radius-md); padding: 16px; text-align: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin-bottom: 6px;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+          <div style="font-size: 13px; font-weight: 600;">Photo Verification Required</div>
+          <p style="font-size: 11px; color: var(--text-muted); margin: 4px 0 10px 0;">Upload turnover photos of kitchen, bed making, and amenities tray before sign-off.</p>
+          <button class="btn-secondary" style="margin: 0 auto;" onclick="showToast('Inspection photos uploaded successfully!')">Attach Photos</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="close-modal-btn btn-secondary">Close</button>
+        <button class="btn-primary" onclick="showToast('Cleaning certified & marked ready for incoming guest'); document.getElementById('cleaningModal').classList.remove('active');">
+          Sign-Off & Approve Unit
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       MODAL: NEW MANUAL BOOKING
+       ======================================================================== -->
+  <div id="newBookingModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="font-size: 17px; font-weight: 700;">Create Direct or Manual Reservation</h3>
+        <button class="close-modal-btn icon-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Property Unit</label>
+            <select style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main); font-weight: 500;">
+              <option>The Glasshouse Villa (Aspen)</option>
+              <option>Azure Oceanfront Penthouse (Miami)</option>
+              <option>Nordic Timber Forest Loft (Tahoe)</option>
+              <option>Emerald Bay Waterfront Villa (Como)</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Booking Source</label>
+            <select style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main); font-weight: 500;">
+              <option>Direct Booking Site</option>
+              <option>Phone / Offline VIP</option>
+              <option>Corporate Partner</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Guest Full Name</label>
+            <input type="text" placeholder="e.g. Alexander Wright" style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main);">
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Guest Mobile (For Smart Lock PIN)</label>
+            <input type="text" placeholder="+1 (555) 019-2834" style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main);">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Check-in Date</label>
+            <input type="date" value="2026-09-28" style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main);">
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Check-out Date</label>
+            <input type="date" value="2026-10-02" style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main);">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="close-modal-btn btn-secondary">Cancel</button>
+        <button class="btn-primary" onclick="showToast('New Direct Booking created! Smart lock PIN dispatched to guest.'); document.getElementById('newBookingModal').classList.remove('active');">
+          Confirm Reservation & Generate Lock PIN
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       MODAL: ADD NEW LISTING
+       ======================================================================== -->
+  <div id="addPropertyModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="font-size: 17px; font-weight: 700;">Add New Rental Property</h3>
+        <button class="close-modal-btn icon-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Property Name</label>
+          <input type="text" placeholder="e.g. Sunset Horizon Cliff Villa" style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main);">
+        </div>
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Full Address & City</label>
+            <input type="text" placeholder="104 Pacific Coast Hwy, Malibu, CA" style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main);">
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Base Nightly Rate ($)</label>
+            <input type="number" placeholder="650" style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main);">
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Guests Capacity</label>
+            <input type="number" value="6" style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main);">
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Bedrooms</label>
+            <input type="number" value="3" style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main);">
+          </div>
+          <div>
+            <label style="display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Smart Lock Brand</label>
+            <select style="width: 100%; background: #F8FAFC; border: 1px solid var(--border-subtle); padding: 10px; border-radius: var(--radius-md); color: var(--text-main); font-weight: 500;">
+              <option>Schlage Encode</option>
+              <option>Yale Assure 2</option>
+              <option>August Smart Lock</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="close-modal-btn btn-secondary">Cancel</button>
+        <button class="btn-primary" onclick="showToast('Property listed & 2-way iCal sync activated'); document.getElementById('addPropertyModal').classList.remove('active');">
+          Save & Connect Channels
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Toast Feedback Notifications Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- JavaScript logic -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StayOps | The Operating System for Short-Term Rental Operators</title>
+  <meta name="description" content="Unify multi-calendar channel sync, automated turnover operations, smart lock access, and guest messaging in one high-performance platform.">
+  <link rel="stylesheet" href="landing.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Grid Glow -->
+  <div class="bg-grid-pattern"></div>
+
+  <!-- ========================================================================
+       TOP NAVIGATION BAR
+       ======================================================================== -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <div class="brand-wrap">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        <span class="brand-name">Stay<span>Ops</span></span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#features" class="nav-link">Platform</a>
+        <a href="#versus" class="nav-link">Why StayOps</a>
+        <a href="#calculator" class="nav-link">ROI Calculator</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-right">
+        <!-- Theme Switcher Button -->
+        <button id="themeToggleBtn" class="btn-outline" style="padding: 8px 14px; font-size: 13px;" title="Toggle Light / Dark Mode">
+          <span id="themeIcon">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+        <a href="index.html" class="btn-ghost">Sign In</a>
+        <a href="index.html" class="btn-cta">
+          <span>Launch Live App</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="announcement-badge">
+        <span class="dot"></span>
+        <span>StayOps 3.0: Direct 2-Way API Sync with Airbnb & VRBO</span>
+      </div>
+
+      <h1 class="hero-title">
+        The Operating System Built for High-Performing <span>Short-Term Rentals</span>.
+      </h1>
+
+      <p class="hero-subtitle">
+        Stop juggling 7 disconnected apps. StayOps unifies channel distribution, smart lock access, turnover housekeeping, and guest messaging on one zero-latency surface.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="index.html" class="btn-cta" style="padding: 14px 28px; font-size: 15px;">
+          <span>Explore Live Dashboard Demo</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="#calculator" class="btn-outline" style="padding: 14px 28px; font-size: 15px;">
+          <span>Calculate Host Hours Saved</span>
+        </a>
+      </div>
+
+      <!-- Live Mockup Hero Frame -->
+      <div class="hero-mockup-wrapper">
+        <!-- Floating Interactive Badge 1 -->
+        <div class="float-tag-badge float-badge-1">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(16,185,129,0.15); display: flex; align-items: center; justify-content: center; color: var(--emerald);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <div style="text-align: left;">
+            <div style="font-size: 11px; color: var(--text-muted);">Smart Lock PIN Generated</div>
+            <div style="font-size: 13px; font-weight: 700; color: #fff;">PIN #3104 • Valid for Marcus Vance</div>
+          </div>
+        </div>
+
+        <!-- Floating Interactive Badge 2 -->
+        <div class="float-tag-badge float-badge-2">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(59,130,246,0.15); display: flex; align-items: center; justify-content: center; color: #60A5FA;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div style="text-align: left;">
+            <div style="font-size: 11px; color: var(--text-muted);">Turnover Inspection Signed Off</div>
+            <div style="font-size: 13px; font-weight: 700; color: #fff;">Maria Santos • 8 Photos Verified</div>
+          </div>
+        </div>
+
+        <!-- Browser Shell -->
+        <div class="hero-mockup-frame">
+          <div class="mockup-header-bar">
+            <div class="window-dots">
+              <span class="w-dot w-red"></span>
+              <span class="w-dot w-yellow"></span>
+              <span class="w-dot w-green"></span>
+            </div>
+            <div class="mockup-url-bar">https://app.stayops.io/workspace/operations-hub</div>
+            <div style="font-size: 11px; color: var(--emerald); font-weight: 600;">● Live Production Feed</div>
+          </div>
+
+          <div class="mockup-body">
+            <!-- Mini Embedded Preview Bar -->
+            <div class="preview-kpi-bar">
+              <div class="preview-kpi">
+                <span class="preview-kpi-lbl">Fleet Occupancy</span>
+                <div class="preview-kpi-val" style="color: var(--emerald);">88.4%</div>
+              </div>
+              <div class="preview-kpi">
+                <span class="preview-kpi-lbl">Today's Revenue</span>
+                <div class="preview-kpi-val">$12,450</div>
+              </div>
+              <div class="preview-kpi">
+                <span class="preview-kpi-lbl">Turnover Cleanings</span>
+                <div class="preview-kpi-val" style="color: var(--accent-amber);">4 Due Today</div>
+              </div>
+              <div class="preview-kpi">
+                <span class="preview-kpi-lbl">Avg Response Time</span>
+                <div class="preview-kpi-val" style="color: var(--accent-cyan);">2.8 Minutes</div>
+              </div>
+            </div>
+
+            <div class="preview-split">
+              <!-- Left Mini Timeline -->
+              <div class="preview-box">
+                <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 12px;">
+                  <strong style="color: #fff;">Real-Time Operational Roster</strong>
+                  <span style="color: var(--emerald); font-weight: 600;">Synced Across Channels</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 8px; font-size: 12px;">
+                    <div>
+                      <strong style="color: #fff;">Marcus Vance</strong>
+                      <span style="color: #60A5FA; font-size: 10px; margin-left: 6px; font-weight: 700;">VRBO</span>
+                      <div style="font-size: 11px; color: var(--text-muted);">Azure Oceanfront Penthouse • Check-in 3:00 PM</div>
+                    </div>
+                    <span style="color: var(--emerald); font-family: monospace; font-size: 12px; font-weight: 700;">PIN #3104</span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 8px; font-size: 12px;">
+                    <div>
+                      <strong style="color: #fff;">Sophie Laurent</strong>
+                      <span style="color: #FF385C; font-size: 10px; margin-left: 6px; font-weight: 700;">AIRBNB VIP</span>
+                      <div style="font-size: 11px; color: var(--text-muted);">Emerald Bay Villa • Late checkout approved 1:00 PM</div>
+                    </div>
+                    <span style="background: rgba(16,185,129,0.15); color: var(--emerald); padding: 2px 8px; border-radius: 999px; font-size: 11px;">Active</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Mini Telemetry -->
+              <div class="preview-box">
+                <div style="font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 10px;">Smart Hardware Hub</div>
+                <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12px;">
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Front Door Locks</span>
+                    <span style="color: var(--emerald); font-weight: 600;">6 Connected</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Noise Telemetry</span>
+                    <span style="color: #60A5FA;">Quiet (42 dB avg)</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Thermostats</span>
+                    <span style="color: #fff;">Eco Mode (71°F)</span>
+                  </div>
+                  <a href="index.html" class="btn-cta" style="margin-top: 6px; width: 100%; justify-content: center; padding: 8px; font-size: 12px;">Open Full UI →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SOCIAL PROOF / HARDWARE & CHANNEL LOGOS
+       ======================================================================== -->
+  <section class="social-proof-strip">
+    <div class="container">
+      <div class="proof-caption">Direct Native Integrations with Premier Travel & IoT Standards</div>
+      <div class="partner-logos">
+        <div class="partner-logo-item">
+          <span style="color: #FF385C;">●</span> Airbnb Preferred Partner
+        </div>
+        <div class="partner-logo-item">
+          <span style="color: #2C64B5;">●</span> VRBO Elite Connectivity
+        </div>
+        <div class="partner-logo-item">
+          <span style="color: #003580;">●</span> Booking.com Premier
+        </div>
+        <div class="partner-logo-item">
+          <span style="color: #10B981;">●</span> Schlage Smart Locks
+        </div>
+        <div class="partner-logo-item">
+          <span style="color: #06B6D4;">●</span> Minut Noise Sensors
+        </div>
+        <div class="partner-logo-item">
+          <span style="color: #6366F1;">●</span> Stripe Verified Payouts
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       PROBLEM VS SOLUTION (The STR Operations Gap)
+       ======================================================================== -->
+  <section id="versus" class="comparison-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">The STR Operations Gap</div>
+        <h2 class="section-title">Built for Operators Who Have Outgrown Fragmented Spreadsheets.</h2>
+        <p class="section-desc">Managing 5 to 500 units without a dedicated operating system inevitably leads to double-bookings, cleaner miscommunications, and midnight lockout emergencies.</p>
+      </div>
+
+      <div class="versus-grid">
+        <!-- The Old Chaos -->
+        <div class="versus-card card-chaos">
+          <div style="font-size: 12px; font-weight: 700; color: var(--accent-rose); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">The Fragmented Stack</div>
+          <h3>11:00 AM Turnover Chaos</h3>
+          <p style="font-size: 14px; color: var(--text-body);">Juggling WhatsApp groups, separate OTA browser tabs, manual lock apps, and endless spreadsheets.</p>
+          <div class="versus-list">
+            <div class="versus-item">
+              <span class="icon-bad">✕</span>
+              <span><strong>iCal sync delays</strong> resulting in double-bookings between Airbnb and VRBO during peak season.</span>
+            </div>
+            <div class="versus-item">
+              <span class="icon-bad">✕</span>
+              <span><strong>Manual door codes:</strong> Texting guests 4-digit PINs at 10 PM because the electronic keypad wasn't updated.</span>
+            </div>
+            <div class="versus-item">
+              <span class="icon-bad">✕</span>
+              <span><strong>Cleaner no-shows:</strong> No proof of turnover quality until the next guest checks in and complains about dirty sheets.</span>
+            </div>
+            <div class="versus-item">
+              <span class="icon-bad">✕</span>
+              <span><strong>Month-end accounting agony:</strong> Spending 3 entire days calculating owner commissions, taxes, and cleaning fee splits.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- The StayOps Solution -->
+        <div class="versus-card card-stayops">
+          <div style="font-size: 12px; font-weight: 700; color: var(--emerald); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">The StayOps Way</div>
+          <h3>Complete Autopilot Operations</h3>
+          <p style="font-size: 14px; color: var(--text-body);">One unified operating system that executes reservations, field turnarounds, and hardware triggers automatically.</p>
+          <div class="versus-list">
+            <div class="versus-item">
+              <span class="icon-good">✓</span>
+              <span><strong>Sub-second 2-way API sync</strong> that immediately locks availability across all connected sales channels.</span>
+            </div>
+            <div class="versus-item">
+              <span class="icon-good">✓</span>
+              <span><strong>Automated Keyless Access:</strong> Self-generating door PIN matching the guest's phone, auto-expiring at checkout.</span>
+            </div>
+            <div class="versus-item">
+              <span class="icon-good">✓</span>
+              <span><strong>Photo-verified Turnovers:</strong> Cleaners must complete photo checklists on their phone before units unlock for incoming guests.</span>
+            </div>
+            <div class="versus-item">
+              <span class="icon-good">✓</span>
+              <span><strong>Automated Owner Statements:</strong> 1-click professional PDF statements with clear channel fees and net direct deposits.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       INTERACTIVE FEATURE DEEP DIVE TABS
+       ======================================================================== -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Deep-Dive Tour</div>
+        <h2 class="section-title">Engineered for Daily Operational Excellence</h2>
+        <p class="section-desc">Click through the core modules to preview how StayOps manages your portfolio from booking to checkout.</p>
+      </div>
+
+      <!-- Feature Tabs -->
+      <div class="feature-tabs-nav">
+        <button class="feat-tab-btn active" data-tab="calendar">1. Multi-Calendar PMS</button>
+        <button class="feat-tab-btn" data-tab="messaging">2. Unified Inbox & AI</button>
+        <button class="feat-tab-btn" data-tab="housekeeping">3. Turnover Workflows</button>
+        <button class="feat-tab-btn" data-tab="iot">4. Keyless & Noise IoT</button>
+        <button class="feat-tab-btn" data-tab="financials">5. Owner Accounting</button>
+      </div>
+
+      <!-- Active Showcase Pane -->
+      <div class="feature-showcase-pane">
+        <div>
+          <div id="featTag" style="font-size: 11px; font-weight: 800; color: var(--emerald); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">
+            CENTRALIZED PMS ENGINE
+          </div>
+          <h3 id="featTitle" style="font-size: 28px; margin-bottom: 14px;">
+            Zero-Latency 2-Way Multi-Calendar
+          </h3>
+          <p id="featDesc" style="color: var(--text-body); font-size: 15px; margin-bottom: 24px;">
+            Say goodbye to iCal delays and embarrassing double-bookings. StayOps connects directly via direct partner APIs to Airbnb, VRBO, and Booking.com, synchronizing availability and dynamic pricing in under 400 milliseconds.
+          </p>
+          <div id="featBullets" class="feature-bullets">
+            <div class="feature-bullet">
+              <div class="feat-bullet-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <strong style="color: #fff; font-size: 14px;">Direct API Instant Sync</strong>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Instant reservation blocks across all channels with zero manual calendar updates.</p>
+              </div>
+            </div>
+            <div class="feature-bullet">
+              <div class="feat-bullet-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <strong style="color: #fff; font-size: 14px;">Gantt Timeline Interface</strong>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Drag-free visual overview of all 14 upcoming days across your entire property fleet.</p>
+              </div>
+            </div>
+            <div class="feature-bullet">
+              <div class="feat-bullet-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <strong style="color: #fff; font-size: 14px;">Direct Booking Engine</strong>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Accept commission-free credit card bookings directly on your custom domain via Stripe.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Right Display -->
+        <div id="featMockDisplay" class="feature-mock-display">
+          <div style="font-family: monospace; font-size: 11px; color: var(--emerald); margin-bottom: 8px;">● 2-WAY API SYNC ACTIVE (AIRBNB • VRBO • DIRECT)</div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; margin-bottom: 10px;">
+            <div style="display:flex; justify-content:space-between; font-weight:600; font-size:12px; color:#fff; margin-bottom:4px;">
+              <span>The Glasshouse Villa (Aspen)</span>
+              <span style="color:#10B981;">$940/nt</span>
+            </div>
+            <div style="height: 24px; background: rgba(255, 56, 92, 0.2); border: 1px solid #FF385C; border-radius: 6px; display:flex; align-items:center; padding: 0 8px; font-size:11px; color:#FF859B;">
+              Sep 24 - 28 • Elena Rostova (Airbnb Instant Book)
+            </div>
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px;">
+            <div style="display:flex; justify-content:space-between; font-weight:600; font-size:12px; color:#fff; margin-bottom:4px;">
+              <span>Azure Oceanfront Penthouse</span>
+              <span style="color:#10B981;">$780/nt</span>
+            </div>
+            <div style="height: 24px; background: rgba(44, 100, 181, 0.25); border: 1px solid #3B82F6; border-radius: 6px; display:flex; align-items:center; padding: 0 8px; font-size:11px; color:#93C5FD;">
+              Sep 24 - 29 • Marcus Vance (VRBO Elite Book)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       HOST SAVINGS & ROI CALCULATOR
+       ======================================================================== -->
+  <section id="calculator" class="calculator-section">
+    <div class="container">
+      <div class="calc-card">
+        <div>
+          <div class="section-tag">Interactive Host Calculator</div>
+          <h2 style="font-size: 32px; margin-bottom: 12px;">See Your Operational Payback.</h2>
+          <p style="color: var(--text-body); font-size: 14px; margin-bottom: 32px;">
+            Adjust the sliders to reflect your portfolio scale and calculate the concrete hours saved and direct commission dollars retained.
+          </p>
+
+          <!-- Slider 1 -->
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-name">Units / Doors Under Management</span>
+              <span id="valDoors" class="slider-val-badge">6 Doors</span>
+            </div>
+            <input type="range" id="sliderDoors" class="custom-slider" min="1" max="50" value="6">
+          </div>
+
+          <!-- Slider 2 -->
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-name">Average Nightly Rate (ADR)</span>
+              <span id="valRate" class="slider-val-badge">$450/night</span>
+            </div>
+            <input type="range" id="sliderRate" class="custom-slider" min="100" max="1500" step="25" value="450">
+          </div>
+
+          <div style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+            *Calculated based on 3.2 turnovers/month/door, 15% OTA commission fees bypassed through direct booking engine, and automated lock dispatch.
+          </div>
+        </div>
+
+        <!-- Output Box -->
+        <div class="calc-output-box">
+          <div style="font-size: 13px; font-weight: 700; color: var(--emerald); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">
+            Estimated Monthly Host Return
+          </div>
+
+          <div class="calc-metric-row">
+            <div class="metric-item">
+              <div>
+                <strong style="color: #fff; font-size: 14px;">Hours Saved Monthly</strong>
+                <div style="font-size: 11px; color: var(--text-muted);">Messaging, cleaner texts & lock codes</div>
+              </div>
+              <span id="metricHours" class="metric-item-num" style="color: var(--emerald);">45 hrs/mo</span>
+            </div>
+
+            <div class="metric-item">
+              <div>
+                <strong style="color: #fff; font-size: 14px;">Direct Booking Revenue Lift</strong>
+                <div style="font-size: 11px; color: var(--text-muted);">15% OTA commission retained</div>
+              </div>
+              <span id="metricDirect" class="metric-item-num" style="color: var(--accent-cyan);">+$1,458/mo</span>
+            </div>
+
+            <div class="metric-item" style="border-bottom: none; padding-bottom: 0;">
+              <div>
+                <strong style="color: #fff; font-size: 14px;">Net StayOps Software ROI</strong>
+                <div style="font-size: 11px; color: var(--text-muted);">Annual value vs software license</div>
+              </div>
+              <span id="metricRoi" class="metric-item-num" style="color: #fff;">17.4x Return</span>
+            </div>
+          </div>
+
+          <a href="index.html" class="btn-cta" style="width: 100%; justify-content: center; margin-top: 24px;">
+            Experience StayOps Now →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       AUTHENTIC OPERATOR TESTIMONIALS
+       ======================================================================== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Operator Testimonials</div>
+        <h2 class="section-title">Trusted by Independent Hosts & Management Firms</h2>
+        <p class="section-desc">Here is how leading short-term rental teams run their portfolios with StayOps.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="test-card">
+          <p class="test-quote">
+            "We scaled from 8 luxury cabins in Aspen to 32 units across Colorado without adding a single extra operations hire. The automated door code generation and cleaner photo verification eliminated 90% of our daily fire drills."
+          </p>
+          <div class="test-author-box">
+            <img class="test-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus Vance">
+            <div>
+              <div class="test-name">Marcus Vance</div>
+              <div class="test-role">Founder, Alpine Crest Retreats (32 Doors)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <p class="test-quote">
+            "The unified inbox alone saved our guest support team 18 hours every week. Airbnb, VRBO, and WhatsApp inquiries all sit in one live thread with complete reservation context and door code history."
+          </p>
+          <div class="test-author-box">
+            <img class="test-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Elena Rostova">
+            <div>
+              <div class="test-name">Elena Rostova</div>
+              <div class="test-role">Operations Director, Azure Coastal Stays (18 Doors)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-card">
+          <p class="test-quote">
+            "Generating monthly owner payout statements used to take 3 full days of Excel reconciliations. With StayOps, channel commissions, cleaning fees, and net payouts are calculated in 1 click."
+          </p>
+          <div class="test-author-box">
+            <img class="test-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Dr. Jonathan Ross">
+            <div>
+              <div class="test-name">Jonathan Ross</div>
+              <div class="test-role">Principal Host, Urban Luxe Collection NYC (12 Doors)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       TRANSPARENT PRICING
+       ======================================================================== -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Transparent Pricing</div>
+        <h2 class="section-title">Simple Per-Door Pricing. No Hidden Setup Fees.</h2>
+        <p class="section-desc">All plans include full 2-way channel sync, automated guest messaging, and smart lock hardware integrations.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Starter Plan -->
+        <div class="price-card">
+          <h4 style="font-size: 18px; font-weight: 700;">Starter Host</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">For independent hosts managing 1 to 5 units.</p>
+          <div class="price-rate">$8 <span>/unit /month</span></div>
+          <div class="price-features-list">
+            <div class="p-item"><span>✓</span> 2-Way Airbnb & VRBO Sync</div>
+            <div class="p-item"><span>✓</span> Unified Guest Inbox</div>
+            <div class="p-item"><span>✓</span> Automated Door PIN Codes</div>
+            <div class="p-item"><span>✓</span> Mobile Cleaner Web Checklist</div>
+            <div class="p-item" style="color: var(--text-dim);">✕ Custom Direct Booking Engine</div>
+          </div>
+          <a href="index.html" class="btn-outline" style="width: 100%; justify-content: center;">Get Started</a>
+        </div>
+
+        <!-- Pro Plan (Featured) -->
+        <div class="price-card featured">
+          <div class="featured-pill">Most Popular for Operators</div>
+          <h4 style="font-size: 18px; font-weight: 700; color: #fff;">Professional Operator</h4>
+          <p style="font-size: 13px; color: var(--text-body); margin-top: 4px;">For scaling property management companies (6 to 30 units).</p>
+          <div class="price-rate" style="color: var(--emerald);">$14 <span>/unit /month</span></div>
+          <div class="price-features-list">
+            <div class="p-item"><span>✓</span> <strong>Everything in Starter, plus:</strong></div>
+            <div class="p-item"><span>✓</span> Commission-Free Direct Booking Site</div>
+            <div class="p-item"><span>✓</span> AI Contextual Message Suggestions</div>
+            <div class="p-item"><span>✓</span> Minut Noise Decibel Sensors</div>
+            <div class="p-item"><span>✓</span> Automated Owner Payout PDF Statements</div>
+            <div class="p-item"><span>✓</span> Dedicated Mobile App Simulator</div>
+          </div>
+          <a href="index.html" class="btn-cta" style="width: 100%; justify-content: center;">Start 14-Day Free Trial</a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="price-card">
+          <h4 style="font-size: 18px; font-weight: 700;">Portfolio Enterprise</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">For regional hospitality brands (31+ units).</p>
+          <div class="price-rate">$19 <span>/unit /month</span></div>
+          <div class="price-features-list">
+            <div class="p-item"><span>✓</span> <strong>Everything in Pro, plus:</strong></div>
+            <div class="p-item"><span>✓</span> Dedicated Account Manager & Onboarding</div>
+            <div class="p-item"><span>✓</span> Custom Webhooks & Open PMS API</div>
+            <div class="p-item"><span>✓</span> Multi-Entity Owner Banking Splits</div>
+            <div class="p-item"><span>✓</span> 99.99% SLA Uptime Guarantee</div>
+          </div>
+          <a href="index.html" class="btn-outline" style="width: 100%; justify-content: center;">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FAQ ACCORDION
+       ======================================================================== -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Frequently Asked Questions</div>
+        <h2 class="section-title">Everything You Need to Know</h2>
+      </div>
+
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>How fast is the 2-way multi-calendar sync between Airbnb and VRBO?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          StayOps communicates directly via official partner APIs rather than relying solely on slow iCal feeds. When a guest books on Airbnb, the corresponding dates are blocked on VRBO, Booking.com, and your direct website in under 400 milliseconds, completely preventing double-bookings.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do smart lock codes work if a guest changes their arrival time?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Door codes are automatically created to match the last 4 digits of the guest's verified phone number. If you approve early check-in or late check-out through the unified inbox, StayOps automatically updates the lock's active validity window remotely in real time.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do our housekeepers need to pay for an account or install heavy software?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          No. Cleaners receive an automated link (via SMS or WhatsApp) that opens their tailored mobile checklist directly in their browser. They can check off items, upload inspection photos of the completed turnover, and report maintenance issues without needing a paid seat.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I accept direct bookings without paying OTA commissions?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! StayOps includes a built-in direct booking engine connected to Stripe. You keep 100% of your rental revenue minus standard 2.9% credit card processing fees, bypassing 15% to 20% platform commissions.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       BOTTOM CTA BANNER
+       ======================================================================== -->
+  <section class="container">
+    <div class="bottom-cta">
+      <h2 style="font-size: 36px; margin-bottom: 14px;">Ready to Put Your Short-Term Rental Portfolio on Autopilot?</h2>
+      <p style="max-width: 600px; margin: 0 auto 32px auto; color: var(--text-body); font-size: 16px;">
+        Join over 14,000 doors operating smoothly across North America and Europe. Explore the fully interactive operations workspace now.
+      </p>
+      <a href="index.html" class="btn-cta" style="padding: 14px 32px; font-size: 15px;">
+        <span>Launch Live Application & Mobile Simulator</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-wrap" style="margin-bottom: 12px;">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.3">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <span class="brand-name">Stay<span>Ops</span></span>
+          </div>
+          <p style="font-size: 13px; line-height: 1.6; color: var(--text-muted);">
+            The centralized operating system for modern short-term rental operators, boutique hospitality brands, and professional property managers.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <strong>Product</strong>
+          <a href="#features">Multi-Calendar PMS</a>
+          <a href="#features">Unified Guest Inbox</a>
+          <a href="#features">Turnover Operations</a>
+          <a href="#features">Smart Lock IoT</a>
+          <a href="index.html">Live Dashboard</a>
+        </div>
+
+        <div class="footer-links-col">
+          <strong>Integrations</strong>
+          <a href="https://airbnb.com" target="_blank" rel="noopener">Airbnb Direct API</a>
+          <a href="https://vrbo.com" target="_blank" rel="noopener">VRBO Elite</a>
+          <a href="https://booking.com" target="_blank" rel="noopener">Booking.com</a>
+          <a href="#">Schlage & Yale Locks</a>
+          <a href="#">Minut Noise Telemetry</a>
+        </div>
+
+        <div class="footer-links-col">
+          <strong>Company</strong>
+          <a href="#calculator">Host ROI Calculator</a>
+          <a href="#pricing">Transparent Pricing</a>
+          <a href="#faq">Host FAQ</a>
+          <a href="mailto:support@stayops.io">Host Support</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 StayOps Technologies Inc. All rights reserved.</div>
+        <div style="display: flex; gap: 18px; align-items: center;">
+          <span style="display: inline-flex; align-items: center; gap: 6px; color: var(--emerald); font-size: 12px;">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--emerald);"></span>
+            All API Systems Operational (99.99%)
+          </span>
+          <a href="#" style="color: var(--text-muted);">Privacy Policy</a>
+          <a href="#" style="color: var(--text-muted);">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript logic -->
+  <script src="landing.js"></script>
+</body>
+</html>
